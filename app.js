@@ -1,5 +1,11 @@
+/*
+if(const !== null {
+  return res.status(200).json({ success: true, payload: response})
+} else {
+  return res.status(400).json({ success: false, payload: null})
+}
 
-
+*/
 
 import express from "express";
 
@@ -57,7 +63,6 @@ app.delete("/api/users/:id", async (req, res) => {
   const deletedUser = await deleteUserByID(userID);
   res.send({ success: true, payload: deletedUser });
 });
-
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);

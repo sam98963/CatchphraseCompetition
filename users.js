@@ -62,13 +62,17 @@ export async function deleteUserByID(id) {
   const response = await fs.readFile(fileName);
   const data = JSON.parse(response);
   // console.log(data)
+  let deletedUser = null;
   for (let i = 0; i < data.length; i++) {
     if (data[i].id === id) {
-      let deleted = data.splice(i, 1);
+      let deletedUser = data.splice(i, 1);
       await fs.writeFile(fileName, JSON.stringify(data), "utf-8");
       console.log(deleted);
-      return deleted[0];
+      return deletedUser[0];
+    } else {
+      console.log(deletedUser);
+      return deletedUser;
     }
   }
 }
-// deleteUserByID("ca1af314-357f-4c09-b7b3-9572af6ec13d")
+deleteUserByID("ca1af314-357f-4c09-b7b3-9572af6ec13d");
