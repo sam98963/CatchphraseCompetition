@@ -1,5 +1,46 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=11139391&assignment_repo_type=AssignmentRepo)
-## Recap task
+# Catchphrase Competition- Week 9 Recap Task
+__________
+
+Sam W (https://github.com/sam98963) asked me to collaborate with him on this weekend's tasks and I was very happy to say yes. We worked together in Week 6 and I really enjoyed working with him. We spent some time over the weekend on Zoom and pair programmed this website together.
+
+#### We started with the back-end:
+- Creating the functions in users.js
+    - Making sure to console.log and node users.js each step of the way to check them
+- Making the route handlers for the HTTP requests
+    - All checked using ThunderClient in VSCode.
+- Then we wanted to make sure we handled errors correctly:
+    - Went through the functions and created if statements and returned null if something had gone wrong with the inputs.
+    - Added .status() in the route handlers and adjusted the success and payload values.
+#### Once we were happy with the errors, we moved onto the front-end:
+    - Created our public folder, index.html and main.js
+    - added add.use(express.static("public")); into app.js
+    - Created a simple boilerplate for the html file
+Sam suggested we frame it as a 'Catchphrase Competition', which would allow users to add their details and a catchphrase to try and win a competition. (Great idea!)
+- Next we made the form, label, inputs and button elements on the page.
+- The next task was writing the functions to gather the data from the form and send a PUT request
+    - This part took some thinking. We knew we needed:
+      [x] Query Selectors      [x] Event Listeners    [x] async functions   [x] dot notation to grab the correct info
+- We used the debugger tool to try to work out where the issue was, and we weren't grabbing the content of the inputs correctly.
+- We needed to use .value on each one, and lots of console.logs later, we got there! Our form now inputs into our JSON file. 🥳
+- If we have time, we'll add some CSS in the morning before next week starts!
+
+
+### Stretch Goals:
+
+- [x] Implementing the correct HTTP response status code
+- [x] Making a front end to consume and display your data
+- [ ] Add CSS to the front-end
+- [ ] Additional routes that include searching the data using query strings
+- [ ] Implementing middleware (start with a simple logger, and then explore what else you can add)
+
+
+### Acknowledgements:
+
+Thanks Sam 👊🏻
+
+______
+## Information from School of Code:
+_______
 
 ### Create your API routes
 
