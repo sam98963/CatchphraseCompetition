@@ -12,10 +12,9 @@ Sam W (https://github.com/sam98963) asked me to collaborate with him on this wee
     - Went through the functions and created if statements and returned null if something had gone wrong with the inputs.
     - Added .status() in the route handlers and adjusted the success and payload values.
 #### Once we were happy with the errors, we moved onto the front-end
-
-    - Created our public folder, index.html and main.js
-    - added add.use(express.static("public")); into app.js
-    - Created a simple boilerplate for the html file
+- Created our public folder, index.html and main.js
+- added add.use(express.static("public")); into app.js
+- Created a simple boilerplate for the html file
 Sam suggested we frame it as a 'Catchphrase Competition', which would allow users to add their details and a catchphrase to try and win a competition. (Great idea!)
 - Next we made the form, label, inputs and button elements on the page.
 - The next task was writing the functions to gather the data from the form and send a PUT request
