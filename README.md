@@ -12,6 +12,7 @@ Sam W (https://github.com/sam98963) asked me to collaborate with him on this wee
     - Went through the functions and created if statements and returned null if something had gone wrong with the inputs.
     - Added .status() in the route handlers and adjusted the success and payload values.
 #### Once we were happy with the errors, we moved onto the front-end
+
     - Created our public folder, index.html and main.js
     - added add.use(express.static("public")); into app.js
     - Created a simple boilerplate for the html file
