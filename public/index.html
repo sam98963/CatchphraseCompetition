@@ -11,23 +11,28 @@
     <form type="submit">
       <label for="">
         First Name:
-        <input type="text" class="first-name" />
+        <input type="text" id="first-name" />
       </label>
       <label for="">
         Last Name:
-        <input type="text" class="last-name" />
+        <input type="text" id="last-name" />
       </label>
       <label for="">
         Email:
-        <input type="email" class="email" />
+        <input type="email" id="email" />
       </label>
       <label for="">
         Catchphrase:
-        <input type="text" class="Catchphrase" />
+        <input type="text" id="catchphrase" />
       </label>
-      <button type="submit">Submit</button>
+      <button type="submit" id="submit-btn">Submit</button>
     </form>
 
+    <h1>Here is our most recent entry:</h1>
+    <section>
+      <h1 id="newest-name"></h1>
+      <h2 id="newest-catchphrase"></h2>
+    </section>
     <script src="./main.js"></script>
   </body>
 </html>
