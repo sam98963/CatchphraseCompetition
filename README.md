@@ -3,7 +3,7 @@ __________
 
 Sam W (https://github.com/sam98963) asked me to collaborate with him on this weekend's tasks and I was very happy to say yes. We worked together in Week 6 and I really enjoyed working with him. We spent some time over the weekend on Zoom and pair programmed this website together.
 
-#### We started with the back-end:
+#### We started with the back-end
 - Creating the functions in users.js
     - Making sure to console.log and node users.js each step of the way to check them
 - Making the route handlers for the HTTP requests
@@ -11,7 +11,7 @@ Sam W (https://github.com/sam98963) asked me to collaborate with him on this wee
 - Then we wanted to make sure we handled errors correctly:
     - Went through the functions and created if statements and returned null if something had gone wrong with the inputs.
     - Added .status() in the route handlers and adjusted the success and payload values.
-#### Once we were happy with the errors, we moved onto the front-end:
+#### Once we were happy with the errors, we moved onto the front-end
     - Created our public folder, index.html and main.js
     - added add.use(express.static("public")); into app.js
     - Created a simple boilerplate for the html file
@@ -19,6 +19,7 @@ Sam suggested we frame it as a 'Catchphrase Competition', which would allow user
 - Next we made the form, label, inputs and button elements on the page.
 - The next task was writing the functions to gather the data from the form and send a PUT request
     - This part took some thinking. We knew we needed:
+   
       [x] Query Selectors      [x] Event Listeners    [x] async functions   [x] dot notation to grab the correct info
 - We used the debugger tool to try to work out where the issue was, and we weren't grabbing the content of the inputs correctly.
 - We needed to use .value on each one, and lots of console.logs later, we got there! Our form now inputs into our JSON file. 🥳
