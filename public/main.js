@@ -51,6 +51,7 @@ async function loadData() {
 
 function createCommentBox({ id, first_name, last_name, catchphrase }) {
   const article = document.createElement("article");
+  article.setAttribute("class", "individual-catchphrases")
   const h2 = document.createElement("h2");
   const h3 = document.createElement("h3");
   const upVoteButton = document.createElement("button");
@@ -84,12 +85,14 @@ function renderComments(placeholder) {
 //   payload.forEach(renderComments)
 // }
 
-async function getCatchphrases() {
+async function displayCatchphrasesRandomly() {
   const response = await fetch(`${url}/api/users/`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
   const { payload } = await response.json();
+  payload.sort((a,b)=>(Math.random()-0.5))
+//  randomise comment display
   allCatchphrases.innerHTML = "";
   payload.forEach(renderComments);
 }
@@ -142,4 +145,4 @@ async function enterCatchphraseCompetiton() {
 submitButton.addEventListener("click", handleSubmit);
 
 loadData();
-getCatchphrases();
+displayCatchphrasesRandomly();
