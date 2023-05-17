@@ -24,14 +24,16 @@ Sam suggested we frame it as a 'Catchphrase Competition', which would allow user
       [x] Query Selectors      [x] Event Listeners    [x] async functions   [x] dot notation to grab the correct info
 - We used the debugger tool to try to work out where the issue was, and we weren't grabbing the content of the inputs correctly.
 - We needed to use .value on each one, and lots of console.logs later, we got there! Our form now inputs into our JSON file. 🥳
-- If we have time, we'll add some CSS in the morning before next week starts!
+- We managed to spend some time on Monday before SoC started to style the page.
+- 
 
 
 ### Stretch Goals:
-
+- [x] Use a .sort on the payload to display the catchphrases randomly on each refresh
+- [ ] Add button functionality which allows users to vote for their favourite catchphrase.
 - [x] Implementing the correct HTTP response status code
 - [x] Making a front end to consume and display your data
-- [ ] Add CSS to the front-end
+- [x] Add CSS to the front-end
 - [ ] Additional routes that include searching the data using query strings
 - [ ] Implementing middleware (start with a simple logger, and then explore what else you can add)
 
