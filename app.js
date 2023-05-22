@@ -8,6 +8,7 @@ if(const !== null {
 */
 
 import express from "express";
+import fs from "fs/promises";
 
 const app = express();
 const port = 3000;
@@ -29,6 +30,33 @@ app.use(express.json());
 //     payload: "This route works!",
 //   });
 // });
+
+/* 
+Function that added 0 upvotes to all objects in users.json
+async function addUpVotes() {
+  // READ
+  const response = await fs.readFile("users.json", "utf-8");
+
+  // PARSE
+  const data = JSON.parse(response);
+  console.log(data[0]);
+
+  // MODIFY
+  for (let i = 0; i < data.length; i++) {
+    data[i] = { ...data[i], upvotes: 0 };
+  }
+
+  // STRINGIFY AND WRITE
+  const result = await fs.writeFile(
+    "users.json",
+    JSON.stringify(data),
+    "utf-8"
+  );
+  console.log(result);
+}
+
+addUpVotes();
+*/
 
 // .get for all users { success: true, payload: array of user objects }
 app.get("/api/users", async (req, res) => {

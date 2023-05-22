@@ -16,6 +16,7 @@ function getCatchphrases() {
 
 
 */
+// import fs from "fs/promises";
 
 const url = "http://localhost:3000";
 
@@ -49,23 +50,55 @@ async function loadData() {
 // event listener on button
 // return article
 
-function createCommentBox({ id, first_name, last_name, catchphrase }) {
+function createCommentBox({ id, first_name, last_name, catchphrase, upvotes }) {
   const article = document.createElement("article");
-  article.setAttribute("class", "individual-catchphrases")
+  article.setAttribute("class", "individual-catchphrases");
   const h2 = document.createElement("h2");
   const h3 = document.createElement("h3");
   const upVoteButton = document.createElement("button");
+  const totalUpVotes = document.createElement("p");
 
   h2.innerText = `${first_name} ${last_name}`;
   h3.innerText = catchphrase;
   upVoteButton.innerText = "⬆️";
+  totalUpVotes.innerText = `Upvotes: ${upvotes}`;
 
   article.appendChild(h2);
   article.appendChild(h3);
   article.appendChild(upVoteButton);
+  article.appendChild(totalUpVotes);
+  /*
+  function handleDeleteCard(event) {
+    event.preventDefault();
+    let deleteURL = `${url}/api/recipes/${id}`;
+    let option = { method: "DELETE" };
+    deleteRecipe(deleteURL, option);
+  }
 
-  // upVoteButton.addEventListener("click",...)
+  async function deleteRecipe(deleteURL, option) {
+    const response = await fetch(deleteURL, option);
+    const data = await response.json();
+    getRecipes();
 
+    // event.target.parentNode.remove();
+  }
+*/
+
+  // Get request to fetch the data object
+  // Patch request to update the votes
+
+  // Add one to upvote on each button click
+  async function addOneVote(id) {
+    let getURL = `http://localhost:3000/api/users/${id}`;
+    let option = { method: "GET" };
+    const response = await fetch(getURL, option);
+    const getData = await response.json;
+    console.log(getData);
+    console.log(id);
+
+    // const upvotes = getData.upvotes;
+  }
+  upVoteButton.addEventListener("click", addOneVote);
   return article;
 }
 
@@ -91,8 +124,8 @@ async function displayCatchphrasesRandomly() {
     headers: { "Content-Type": "application/json" },
   });
   const { payload } = await response.json();
-  payload.sort((a,b)=>(Math.random()-0.5))
-//  randomise comment display
+  payload.sort((a, b) => Math.random() - 0.5);
+  //  randomise comment display
   allCatchphrases.innerHTML = "";
   payload.forEach(renderComments);
 }
@@ -146,3 +179,9 @@ submitButton.addEventListener("click", handleSubmit);
 
 loadData();
 displayCatchphrasesRandomly();
+
+/* 
+READ, PARSE, MODIFY, STRINGIFY, WRITE
+
+[...data[i], upvotes: 0]
+*/
