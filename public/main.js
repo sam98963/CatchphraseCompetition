@@ -16,7 +16,6 @@ function getCatchphrases() {
 
 
 */
-// import fs from "fs/promises";
 
 const url = "http://localhost:3000";
 
@@ -50,6 +49,7 @@ async function loadData() {
 // event listener on button
 // return article
 
+
 function createCommentBox({ id, first_name, last_name, catchphrase, upvotes }) {
   const article = document.createElement("article");
   article.setAttribute("class", "individual-catchphrases");
@@ -58,14 +58,18 @@ function createCommentBox({ id, first_name, last_name, catchphrase, upvotes }) {
   const upVoteButton = document.createElement("button");
   const totalUpVotes = document.createElement("p");
 
+
   h2.innerText = `${first_name} ${last_name}`;
   h3.innerText = catchphrase;
   upVoteButton.innerText = "⬆️";
+
   totalUpVotes.innerText = `Upvotes: ${upvotes}`;
+
 
   article.appendChild(h2);
   article.appendChild(h3);
   article.appendChild(upVoteButton);
+
   article.appendChild(totalUpVotes);
   /*
   function handleDeleteCard(event) {
@@ -99,6 +103,7 @@ function createCommentBox({ id, first_name, last_name, catchphrase, upvotes }) {
     // const upvotes = getData.upvotes;
   }
   upVoteButton.addEventListener("click", addOneVote);
+
   return article;
 }
 
@@ -118,14 +123,18 @@ function renderComments(placeholder) {
 //   payload.forEach(renderComments)
 // }
 
+
 async function displayCatchphrasesRandomly() {
+  
   const response = await fetch(`${url}/api/users/`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
   const { payload } = await response.json();
+
   payload.sort((a, b) => Math.random() - 0.5);
   //  randomise comment display
+
   allCatchphrases.innerHTML = "";
   payload.forEach(renderComments);
 }
@@ -180,8 +189,4 @@ submitButton.addEventListener("click", handleSubmit);
 loadData();
 displayCatchphrasesRandomly();
 
-/* 
-READ, PARSE, MODIFY, STRINGIFY, WRITE
 
-[...data[i], upvotes: 0]
-*/
