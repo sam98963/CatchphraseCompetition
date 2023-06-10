@@ -25,12 +25,12 @@ Sam suggested we frame it as a 'Catchphrase Competition', which would allow user
 - We used the debugger tool to try to work out where the issue was, and we weren't grabbing the content of the inputs correctly.
 - We needed to use .value on each one, and lots of console.logs later, we got there! Our form now inputs into our JSON file. 🥳
 - We managed to spend some time on Monday before SoC started to style the page.
-- 
+- We got the voting system working after A LOT of trial and error. Found the issue in our on click event - we needed to specify the content type to be application/json...! Happy to be able to see the votes now, but the data needs a serious sort out so that's on Sam's list of jobs for this weekend.
 
 
 ### Stretch Goals:
 - [x] Use a .sort on the payload to display the catchphrases randomly on each refresh
-- [ ] Add button functionality which allows users to vote for their favourite catchphrase.
+- [x] Add button functionality which allows users to vote for their favourite catchphrase.
 - [x] Implementing the correct HTTP response status code
 - [x] Making a front end to consume and display your data
 - [x] Add CSS to the front-end
