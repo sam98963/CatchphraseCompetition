@@ -58,7 +58,7 @@ export async function updateUserByID(id, updatedUser) {
   const data = JSON.parse(response);
   for (let i = 0; i < data.length; i++) {
     if (data[i].id === id) {
-      data[i] = { id: data[i].id, ...updatedUser };
+      data[i] = updatedUser;
       await fs.writeFile(fileName, JSON.stringify(data), "utf-8");
       return data[i];
     } else {
